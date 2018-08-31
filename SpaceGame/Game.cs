@@ -22,7 +22,7 @@ namespace SpaceGame
             TotalMoney = 1000;
             TotalTimeTraveled = 0;
             Planets = GeneratePlanets();
-            GameShip = new Ship(ShipUpgrade.NoobShip);
+            GameShip = new Ship(ShipUpgrade.NoobShip,IPlanet.GetPlanetName);
         }
 
         private bool IsGameLost()
@@ -233,7 +233,7 @@ namespace SpaceGame
             foreach(IPlanet planet in Planets)
             {
                 planetList.Append(menuNumber + ".) ");
-                planetList.AppendLine(IPlanet.Name);
+                planetList.AppendLine(IPlanet.GeneratePlanets);
                 menuNumber++;
             }
 

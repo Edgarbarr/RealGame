@@ -15,16 +15,20 @@ namespace SpaceGame
         public int CargoCapacity { get; set; }
         public int CurrentWarpSpeed { get; set; }
         public IPlanet CurrentPlanet { get; set; }
+        public Ship(IPlanet defaultPlanet)
+        {
+            CurrentPlanet = defaultPlanet;
+        }
         public ShipUpgrade Upgrade { get; set; }
         public int MaxWarpSpeed { get; set; }
         public int FuelUnits { get; set; }
         public double MaxLightYears { get; set; }
 
-        public Ship(ShipUpgrade upgrade)
+        public Ship(ShipUpgrade upgrade, IPlanet planet)
         {
             CargoCapacity = 10;
             CurrentWarpSpeed = 1;
-            CurrentPlanet = new IPlanet(PlanetName.Earth);
+            CurrentPlanet = new IPlanet(defaultPlanet.GetPlanetName);
             Upgrade = upgrade;
             MaxWarpSpeed = CalculateMaxWarpSpeed();
             FuelUnits = 10;
@@ -69,7 +73,7 @@ namespace SpaceGame
 
             // Uncomment the line below to delay the program for 3000 milliseconds (3 seconds)
             // which simulates the ship is traveling in real time; Make sure you study Thread.Sleep before you use it
-            //Thread.Sleep(3000);
+            Thread.Sleep(3000);
             Console.WriteLine($"You have now arrived at: {CurrentPlanet.Name}");
         }
     }
