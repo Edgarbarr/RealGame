@@ -14,7 +14,7 @@ namespace SpaceGame
     {
         public int CargoCapacity { get; set; }
         public int CurrentWarpSpeed { get; set; }
-        public Planet CurrentPlanet { get; set; }
+        public IPlanet CurrentPlanet { get; set; }
         public ShipUpgrade Upgrade { get; set; }
         public int MaxWarpSpeed { get; set; }
         public int FuelUnits { get; set; }
@@ -62,7 +62,7 @@ namespace SpaceGame
             
         }
         
-        public void FlyTo(Planet planet)
+        public void FlyTo(IPlanet planet)
         {
             CurrentPlanet = planet;
             Console.WriteLine("Traveling...");
