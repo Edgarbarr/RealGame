@@ -33,7 +33,7 @@ namespace SpaceGame
         //
         // C# Naming Conventions
         // public variables == camelCase
-        // private variables == _example1
+        // private variables == _example
         // Enums, Classes, Properties, Methods = PascalCase
 
         public int CalculateMaxWarpSpeed()
